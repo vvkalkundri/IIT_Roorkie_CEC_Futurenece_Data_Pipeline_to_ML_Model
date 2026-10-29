@@ -13,3 +13,11 @@ airflow.db
 .astro/*.local.yml
 .astro/*.local.yaml
 test_api.py 
+
+# NammaMart private run data, quarantine, and local warehouse
+include/etl_runs/
+include/quarantine/vijayc5/
+include/warehouse_vijayc5.duckdb*
+include/warehouse_elt_vijayc5.duckdb*
+include/etl_state/
+include/observability_workspaces/
