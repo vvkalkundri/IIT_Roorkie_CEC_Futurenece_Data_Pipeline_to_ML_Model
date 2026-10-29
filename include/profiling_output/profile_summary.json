@@ -1,0 +1,555 @@
+{
+  "as_of": "2026-10-24",
+  "files": {
+    "orders.csv": {
+      "rows": 2412,
+      "columns": 13,
+      "sha256": "c4e7a190561370fcd0ce992af2ccb72f8818927bbd5bae7c0951a20d30226362",
+      "duplicate_key_rows": 24,
+      "duplicate_key_values": 12,
+      "exact_duplicate_excess_rows": 12,
+      "column_profiles": {
+        "order_id": {
+          "missing": 0,
+          "distinct_nonblank": 2400,
+          "kind": "text"
+        },
+        "order_ts": {
+          "missing": 1,
+          "distinct_nonblank": 2392,
+          "kind": "date",
+          "minimum": "2026-09-01 06:30:15",
+          "maximum": "2027-01-01 09:00:00",
+          "invalid_nonblank": 5
+        },
+        "customer_id": {
+          "missing": 18,
+          "distinct_nonblank": 400,
+          "kind": "text"
+        },
+        "store_id": {
+          "missing": 0,
+          "distinct_nonblank": 18,
+          "kind": "text"
+        },
+        "product_id": {
+          "missing": 0,
+          "distinct_nonblank": 159,
+          "kind": "text"
+        },
+        "quantity": {
+          "missing": 0,
+          "distinct_nonblank": 9,
+          "kind": "numeric",
+          "minimum": -3.0,
+          "maximum": 5.0,
+          "invalid_nonblank": 0
+        },
+        "unit_price": {
+          "missing": 0,
+          "distinct_nonblank": 133,
+          "kind": "numeric",
+          "minimum": 10.0,
+          "maximum": 883.0,
+          "invalid_nonblank": 0
+        },
+        "discount_pct": {
+          "missing": 0,
+          "distinct_nonblank": 8,
+          "kind": "numeric",
+          "minimum": 0.0,
+          "maximum": 250.0,
+          "invalid_nonblank": 0
+        },
+        "order_amount": {
+          "missing": 0,
+          "distinct_nonblank": 1155,
+          "kind": "numeric",
+          "minimum": -1593.0,
+          "maximum": 9576.0,
+          "invalid_nonblank": 0
+        },
+        "payment_mode": {
+          "missing": 0,
+          "distinct_nonblank": 8,
+          "kind": "text",
+          "raw_value_counts": {
+            "UPI": 1329,
+            "Card": 493,
+            "Cash on Delivery": 326,
+            "Wallet": 254,
+            "upi": 4,
+            "Cashh": 2,
+            "UPI ": 2,
+            "CARD": 1,
+            "cod": 1
+          }
+        },
+        "order_status": {
+          "missing": 0,
+          "distinct_nonblank": 5,
+          "kind": "text",
+          "raw_value_counts": {
+            "DELIVERED": 2182,
+            "CANCELLED": 156,
+            "RETURNED": 69,
+            "Pending??": 3,
+            "delivered": 2
+          }
+        },
+        "channel": {
+          "missing": 0,
+          "distinct_nonblank": 2,
+          "kind": "text",
+          "raw_value_counts": {
+            "App": 2044,
+            "Web": 368
+          }
+        },
+        "delivery_minutes": {
+          "missing": 164,
+          "distinct_nonblank": 31,
+          "kind": "numeric",
+          "minimum": 8.0,
+          "maximum": 1440.0,
+          "invalid_nonblank": 0
+        }
+      },
+      "freshness": {
+        "latest_order_date": "2027-01-01",
+        "age_days": -69
+      }
+    },
+    "payments.csv": {
+      "rows": 2228,
+      "columns": 7,
+      "sha256": "7dd94c062a8b0e6334f4c620ec62c0146402ea69a21c6252d9b058ccd53e30e3",
+      "duplicate_key_rows": 8,
+      "duplicate_key_values": 4,
+      "exact_duplicate_excess_rows": 4,
+      "column_profiles": {
+        "payment_id": {
+          "missing": 0,
+          "distinct_nonblank": 2224,
+          "kind": "text"
+        },
+        "order_id": {
+          "missing": 0,
+          "distinct_nonblank": 2224,
+          "kind": "text"
+        },
+        "payment_ts": {
+          "missing": 0,
+          "distinct_nonblank": 2210,
+          "kind": "date",
+          "minimum": "2026-09-01 06:30:24",
+          "maximum": "2027-01-01 09:01:46",
+          "invalid_nonblank": 0
+        },
+        "payment_mode": {
+          "missing": 0,
+          "distinct_nonblank": 8,
+          "kind": "text",
+          "raw_value_counts": {
+            "UPI": 1238,
+            "Card": 445,
+            "Cash on Delivery": 301,
+            "Wallet": 234,
+            "upi": 4,
+            "UPI ": 2,
+            "Cashh": 2,
+            "cod": 1,
+            "CARD": 1
+          }
+        },
+        "amount_paid": {
+          "missing": 0,
+          "distinct_nonblank": 1127,
+          "kind": "numeric",
+          "minimum": -1593.0,
+          "maximum": 9576.0,
+          "invalid_nonblank": 0
+        },
+        "payment_status": {
+          "missing": 0,
+          "distinct_nonblank": 3,
+          "kind": "text",
+          "raw_value_counts": {
+            "SUCCESS": 2116,
+            "REFUNDED": 68,
+            "FAILED": 44
+          }
+        },
+        "gateway_ref": {
+          "missing": 301,
+          "distinct_nonblank": 1923,
+          "kind": "text"
+        }
+      }
+    },
+    "customers.csv": {
+      "rows": 405,
+      "columns": 10,
+      "sha256": "dd913512ebea0caae09e984da1c734ac0fd1712c0a5919eeed557943864cb061",
+      "duplicate_key_rows": 10,
+      "duplicate_key_values": 5,
+      "exact_duplicate_excess_rows": 0,
+      "column_profiles": {
+        "customer_id": {
+          "missing": 0,
+          "distinct_nonblank": 400,
+          "kind": "text"
+        },
+        "full_name": {
+          "missing": 0,
+          "distinct_nonblank": 280,
+          "kind": "text"
+        },
+        "email": {
+          "missing": 0,
+          "distinct_nonblank": 397,
+          "kind": "text"
+        },
+        "phone": {
+          "missing": 0,
+          "distinct_nonblank": 405,
+          "kind": "text"
+        },
+        "city": {
+          "missing": 6,
+          "distinct_nonblank": 1,
+          "kind": "text"
+        },
+        "area": {
+          "missing": 0,
+          "distinct_nonblank": 15,
+          "kind": "text"
+        },
+        "pincode": {
+          "missing": 0,
+          "distinct_nonblank": 17,
+          "kind": "text"
+        },
+        "signup_date": {
+          "missing": 0,
+          "distinct_nonblank": 315,
+          "kind": "date",
+          "minimum": "2024-06-01 00:00:00",
+          "maximum": "2027-01-05 00:00:00",
+          "invalid_nonblank": 0
+        },
+        "loyalty_tier": {
+          "missing": 0,
+          "distinct_nonblank": 7,
+          "kind": "text",
+          "raw_value_counts": {
+            "Bronze": 185,
+            "Silver": 133,
+            "Gold": 54,
+            "Platinum": 25,
+            "BRONZE": 3,
+            "bronze": 3,
+            "SILVER": 2
+          }
+        },
+        "is_active": {
+          "missing": 0,
+          "distinct_nonblank": 2,
+          "kind": "text",
+          "raw_value_counts": {
+            "Y": 352,
+            "N": 53
+          }
+        }
+      }
+    },
+    "products.csv": {
+      "rows": 152,
+      "columns": 10,
+      "sha256": "a86d6227e09c2cb6bd20a70788bb53b0b5c7ade385e382f589d0fa8a15767279",
+      "duplicate_key_rows": 4,
+      "duplicate_key_values": 2,
+      "exact_duplicate_excess_rows": 0,
+      "column_profiles": {
+        "product_id": {
+          "missing": 0,
+          "distinct_nonblank": 150,
+          "kind": "text"
+        },
+        "product_name": {
+          "missing": 0,
+          "distinct_nonblank": 152,
+          "kind": "text"
+        },
+        "category": {
+          "missing": 3,
+          "distinct_nonblank": 6,
+          "kind": "text",
+          "raw_value_counts": {
+            "Dairy & Bakery": 26,
+            "Household": 26,
+            "Fruits & Vegetables": 25,
+            "Snacks & Beverages": 25,
+            "Personal Care": 25,
+            "Staples": 22,
+            "": 3
+          }
+        },
+        "sub_category": {
+          "missing": 0,
+          "distinct_nonblank": 21,
+          "kind": "text",
+          "raw_value_counts": {
+            "Detergent": 14,
+            "Fresh Fruits": 10,
+            "Shampoo": 10,
+            "Herbs": 8,
+            "Milk": 8,
+            "Rice": 8,
+            "Soft Drinks": 8,
+            "Tea & Coffee": 8,
+            "Soap": 8,
+            "Kitchen Supplies": 8,
+            "Fresh Vegetables": 7,
+            "Curd & Paneer": 7,
+            "Atta": 7,
+            "Biscuits": 7,
+            "Oral Care": 7,
+            "Bread": 6,
+            "Cheese": 5,
+            "Dal": 5,
+            "Oil": 5,
+            "Cleaners": 4,
+            "Chips": 2
+          }
+        },
+        "brand": {
+          "missing": 0,
+          "distinct_nonblank": 23,
+          "kind": "text"
+        },
+        "mrp": {
+          "missing": 0,
+          "distinct_nonblank": 135,
+          "kind": "numeric",
+          "minimum": -203.0,
+          "maximum": 883.0,
+          "invalid_nonblank": 0
+        },
+        "cost_price": {
+          "missing": 0,
+          "distinct_nonblank": 150,
+          "kind": "numeric",
+          "minimum": 6.79,
+          "maximum": 631.79,
+          "invalid_nonblank": 0
+        },
+        "unit": {
+          "missing": 0,
+          "distinct_nonblank": 3,
+          "kind": "text",
+          "raw_value_counts": {
+            "pack": 76,
+            "unit": 51,
+            "kg": 25
+          }
+        },
+        "is_perishable": {
+          "missing": 0,
+          "distinct_nonblank": 2,
+          "kind": "text",
+          "raw_value_counts": {
+            "False": 101,
+            "True": 51
+          }
+        },
+        "launch_date": {
+          "missing": 0,
+          "distinct_nonblank": 145,
+          "kind": "date",
+          "minimum": "2023-01-03 00:00:00",
+          "maximum": "2025-09-20 00:00:00",
+          "invalid_nonblank": 0
+        }
+      }
+    },
+    "stores.csv": {
+      "rows": 15,
+      "columns": 8,
+      "sha256": "6bfdf32dd4c36d7a6c68b3b7f10088eda44f1a8d072eb90a6dcac08a40d0b746",
+      "duplicate_key_rows": 0,
+      "duplicate_key_values": 0,
+      "exact_duplicate_excess_rows": 0,
+      "column_profiles": {
+        "store_id": {
+          "missing": 0,
+          "distinct_nonblank": 15,
+          "kind": "text"
+        },
+        "store_name": {
+          "missing": 0,
+          "distinct_nonblank": 15,
+          "kind": "text"
+        },
+        "zone": {
+          "missing": 1,
+          "distinct_nonblank": 4,
+          "kind": "text",
+          "raw_value_counts": {
+            "East": 4,
+            "West": 4,
+            "North": 3,
+            "South": 3,
+            "": 1
+          }
+        },
+        "area": {
+          "missing": 0,
+          "distinct_nonblank": 15,
+          "kind": "text"
+        },
+        "pincode": {
+          "missing": 0,
+          "distinct_nonblank": 15,
+          "kind": "text"
+        },
+        "open_date": {
+          "missing": 0,
+          "distinct_nonblank": 15,
+          "kind": "date",
+          "minimum": "2024-02-14 00:00:00",
+          "maximum": "2025-07-28 00:00:00",
+          "invalid_nonblank": 0
+        },
+        "manager_name": {
+          "missing": 0,
+          "distinct_nonblank": 15,
+          "kind": "text"
+        },
+        "capacity_orders_per_day": {
+          "missing": 0,
+          "distinct_nonblank": 5,
+          "kind": "numeric",
+          "minimum": 0.0,
+          "maximum": 600.0,
+          "invalid_nonblank": 0
+        }
+      }
+    },
+    "orders_2026-10-01_increment.csv": {
+      "rows": 160,
+      "columns": 13,
+      "sha256": "212c775dd41151ce2bceaa206dd2952693cead0776627ee06925c445438e03d9",
+      "duplicate_key_rows": 0,
+      "duplicate_key_values": 0,
+      "exact_duplicate_excess_rows": 0,
+      "column_profiles": {
+        "order_id": {
+          "missing": 0,
+          "distinct_nonblank": 160,
+          "kind": "text"
+        },
+        "order_ts": {
+          "missing": 0,
+          "distinct_nonblank": 152,
+          "kind": "date",
+          "minimum": "2026-09-01 09:38:13",
+          "maximum": "2026-10-01 22:33:00",
+          "invalid_nonblank": 0
+        },
+        "customer_id": {
+          "missing": 0,
+          "distinct_nonblank": 143,
+          "kind": "text"
+        },
+        "store_id": {
+          "missing": 0,
+          "distinct_nonblank": 15,
+          "kind": "text"
+        },
+        "product_id": {
+          "missing": 0,
+          "distinct_nonblank": 98,
+          "kind": "text"
+        },
+        "quantity": {
+          "missing": 0,
+          "distinct_nonblank": 4,
+          "kind": "numeric",
+          "minimum": 1.0,
+          "maximum": 4.0,
+          "invalid_nonblank": 0
+        },
+        "unit_price": {
+          "missing": 0,
+          "distinct_nonblank": 90,
+          "kind": "numeric",
+          "minimum": 10.0,
+          "maximum": 883.0,
+          "invalid_nonblank": 0
+        },
+        "discount_pct": {
+          "missing": 0,
+          "distinct_nonblank": 5,
+          "kind": "numeric",
+          "minimum": 0.0,
+          "maximum": 20.0,
+          "invalid_nonblank": 0
+        },
+        "order_amount": {
+          "missing": 0,
+          "distinct_nonblank": 148,
+          "kind": "numeric",
+          "minimum": 11.0,
+          "maximum": 2052.0,
+          "invalid_nonblank": 0
+        },
+        "payment_mode": {
+          "missing": 0,
+          "distinct_nonblank": 4,
+          "kind": "text",
+          "raw_value_counts": {
+            "UPI": 46,
+            "Card": 44,
+            "Cash on Delivery": 40,
+            "Wallet": 30
+          }
+        },
+        "order_status": {
+          "missing": 0,
+          "distinct_nonblank": 2,
+          "kind": "text",
+          "raw_value_counts": {
+            "DELIVERED": 150,
+            "RETURNED": 10
+          }
+        },
+        "channel": {
+          "missing": 0,
+          "distinct_nonblank": 1,
+          "kind": "text",
+          "raw_value_counts": {
+            "App": 160
+          }
+        },
+        "delivery_minutes": {
+          "missing": 0,
+          "distinct_nonblank": 24,
+          "kind": "numeric",
+          "minimum": 8.0,
+          "maximum": 34.0,
+          "invalid_nonblank": 0
+        }
+      },
+      "freshness": {
+        "latest_order_date": "2026-10-01",
+        "age_days": 23
+      },
+      "incremental_comparison": {
+        "existing_order_rows": 10,
+        "new_order_rows": 150,
+        "note": "Cross-file overlap is an update candidate, not a duplicate error. Validate before upsert."
+      }
+    }
+  }
+}

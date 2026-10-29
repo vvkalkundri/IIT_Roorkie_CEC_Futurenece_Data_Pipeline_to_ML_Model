@@ -1,0 +1,707 @@
+file,record_number,row_key,column,problem,quality_dimension,proposed_rule,severity
+orders.csv,6,ORD001462,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,238,ORD001326,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,270,ORD001462,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,356,ORD001434,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,445,ORD000783,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,733,ORD001239,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,781,ORD001692,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,1024,ORD001870,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,1114,ORD001441,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,1120,ORD001441,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,1144,ORD002129,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,1151,ORD001549,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,1317,ORD001692,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,1641,ORD002129,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,1770,ORD001110,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,2028,ORD000539,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,2058,ORD001239,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,2087,ORD000783,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,2145,ORD000539,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,2181,ORD001434,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,2203,ORD001326,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,2212,ORD001549,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,2327,ORD001870,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,2394,ORD001110,order_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+orders.csv,898,ORD000362,order_ts,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,272,ORD000403,order_ts,Unparseable date/timestamp,Validity,Quarantine,Critical
+orders.csv,512,ORD001610,order_ts,Unparseable date/timestamp,Validity,Quarantine,Critical
+orders.csv,824,ORD000534,order_ts,Unparseable date/timestamp,Validity,Quarantine,Critical
+orders.csv,1099,ORD002012,order_ts,Unparseable date/timestamp,Validity,Quarantine,Critical
+orders.csv,2113,ORD000946,order_ts,Unparseable date/timestamp,Validity,Quarantine,Critical
+orders.csv,139,ORD002119,order_ts,Date after reference date,Timeliness,Quarantine; verify reference date,Critical
+orders.csv,425,ORD001121,order_ts,Date after reference date,Timeliness,Quarantine; verify reference date,Critical
+orders.csv,1121,ORD001765,order_ts,Date after reference date,Timeliness,Quarantine; verify reference date,Critical
+orders.csv,1606,ORD001965,order_ts,Date after reference date,Timeliness,Quarantine; verify reference date,Critical
+orders.csv,2066,ORD001725,order_ts,Date after reference date,Timeliness,Quarantine; verify reference date,Critical
+orders.csv,35,ORD002255,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,250,ORD000701,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,549,ORD000997,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,634,ORD000580,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,820,ORD002019,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,939,ORD002262,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,969,ORD002149,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,988,ORD002367,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,1191,ORD001332,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,1341,ORD001918,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,1388,ORD002156,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,1398,ORD000583,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,1460,ORD000790,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,1582,ORD000764,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,1596,ORD002219,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,1813,ORD001532,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,1822,ORD000022,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,2149,ORD001373,customer_id,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+orders.csv,126,ORD000469,quantity,Must be positive,Accuracy,Quarantine,Critical
+orders.csv,800,ORD001296,quantity,Must be positive,Accuracy,Quarantine,Critical
+orders.csv,815,ORD001459,quantity,Must be positive,Accuracy,Quarantine,Critical
+orders.csv,859,ORD000867,quantity,Must be positive,Accuracy,Quarantine,Critical
+orders.csv,1020,ORD000462,quantity,Must be positive,Accuracy,Quarantine,Critical
+orders.csv,1031,ORD002360,quantity,Must be positive,Accuracy,Quarantine,Critical
+orders.csv,1197,ORD001724,quantity,Must be positive,Accuracy,Quarantine,Critical
+orders.csv,1428,ORD000099,quantity,Must be positive,Accuracy,Quarantine,Critical
+orders.csv,1820,ORD001124,quantity,Must be positive,Accuracy,Quarantine,Critical
+orders.csv,2364,ORD001384,quantity,Must be positive,Accuracy,Quarantine,Critical
+orders.csv,65,ORD002103,discount_pct,Discount outside 0–100,Validity,Quarantine,Critical
+orders.csv,2130,ORD001468,discount_pct,Discount outside 0–100,Validity,Quarantine,Critical
+orders.csv,2291,ORD001237,discount_pct,Discount outside 0–100,Validity,Quarantine,Critical
+orders.csv,800,ORD001296,order_amount,Negative value,Accuracy,Quarantine,Critical
+orders.csv,815,ORD001459,order_amount,Negative value,Accuracy,Quarantine,Critical
+orders.csv,859,ORD000867,order_amount,Negative value,Accuracy,Quarantine,Critical
+orders.csv,1020,ORD000462,order_amount,Negative value,Accuracy,Quarantine,Critical
+orders.csv,1820,ORD001124,order_amount,Negative value,Accuracy,Quarantine,Critical
+orders.csv,2364,ORD001384,order_amount,Negative value,Accuracy,Quarantine,Critical
+orders.csv,2016,ORD002356,payment_mode,Surrounding whitespace,Consistency,Trim in transformed data; preserve raw,Warning
+orders.csv,2295,ORD001874,payment_mode,Surrounding whitespace,Consistency,Trim in transformed data; preserve raw,Warning
+orders.csv,47,ORD001812,payment_mode,Unrecognised category,Validity,Quarantine,Critical
+orders.csv,562,ORD001414,payment_mode,Unrecognised category,Validity,Quarantine,Critical
+orders.csv,2115,ORD001640,payment_mode,Unrecognised category,Validity,Quarantine,Critical
+orders.csv,746,ORD000500,order_status,Unrecognised category,Validity,Quarantine,Critical
+orders.csv,2026,ORD001970,order_status,Unrecognised category,Validity,Quarantine,Critical
+orders.csv,2128,ORD001637,order_status,Unrecognised category,Validity,Quarantine,Critical
+orders.csv,142,ORD001066,order_status,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+orders.csv,746,ORD000500,order_status,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+orders.csv,1880,ORD000153,order_status,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+orders.csv,2026,ORD001970,order_status,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+orders.csv,2128,ORD001637,order_status,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+orders.csv,274,ORD001037,delivery_minutes,Delivery at least 120 minutes,Accuracy,Quarantine; confirm limit with client,Critical
+orders.csv,510,ORD002101,delivery_minutes,Delivery at least 120 minutes,Accuracy,Quarantine; confirm limit with client,Critical
+orders.csv,625,ORD000455,delivery_minutes,Delivery at least 120 minutes,Accuracy,Quarantine; confirm limit with client,Critical
+orders.csv,2074,ORD001104,delivery_minutes,Delivery at least 120 minutes,Accuracy,Quarantine; confirm limit with client,Critical
+orders.csv,2278,ORD000020,delivery_minutes,Delivery at least 120 minutes,Accuracy,Quarantine; confirm limit with client,Critical
+orders.csv,2367,ORD000424,delivery_minutes,Delivery at least 120 minutes,Accuracy,Quarantine; confirm limit with client,Critical
+orders.csv,161,ORD001554,delivery_minutes,Delivered order missing delivery time,Completeness,Quarantine,Critical
+orders.csv,252,ORD001800,delivery_minutes,Delivered order missing delivery time,Completeness,Quarantine,Critical
+orders.csv,651,ORD000731,delivery_minutes,Delivered order missing delivery time,Completeness,Quarantine,Critical
+orders.csv,715,ORD001277,delivery_minutes,Delivered order missing delivery time,Completeness,Quarantine,Critical
+orders.csv,1089,ORD000326,delivery_minutes,Delivered order missing delivery time,Completeness,Quarantine,Critical
+orders.csv,1523,ORD001515,delivery_minutes,Delivered order missing delivery time,Completeness,Quarantine,Critical
+orders.csv,1825,ORD002229,delivery_minutes,Delivered order missing delivery time,Completeness,Quarantine,Critical
+orders.csv,2034,ORD000878,delivery_minutes,Delivered order missing delivery time,Completeness,Quarantine,Critical
+orders.csv,65,ORD002103,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,311,ORD002305,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,479,ORD002004,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,770,ORD000845,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,811,ORD000964,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,1026,ORD002298,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,1028,ORD002031,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,1284,ORD000801,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,1438,ORD000880,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,1640,ORD001274,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,1643,ORD000677,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,1716,ORD002223,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,1719,ORD002128,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,1747,ORD001624,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,1902,ORD002244,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,1926,ORD001755,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,2130,ORD001468,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,2291,ORD001237,order_amount,Amount differs from rounded quantity × price × (1 − discount/100),Accuracy,Quarantine; confirm half-up rounding,Critical
+orders.csv,206,ORD000986,product_id,Reference missing from master,Consistency,Quarantine,Critical
+orders.csv,304,ORD001058,product_id,Reference missing from master,Consistency,Quarantine,Critical
+orders.csv,589,ORD001685,product_id,Reference missing from master,Consistency,Quarantine,Critical
+orders.csv,1217,ORD000070,product_id,Reference missing from master,Consistency,Quarantine,Critical
+orders.csv,1545,ORD000789,product_id,Reference missing from master,Consistency,Quarantine,Critical
+orders.csv,1639,ORD000596,product_id,Reference missing from master,Consistency,Quarantine,Critical
+orders.csv,1833,ORD000134,product_id,Reference missing from master,Consistency,Quarantine,Critical
+orders.csv,1953,ORD000965,product_id,Reference missing from master,Consistency,Quarantine,Critical
+orders.csv,1981,ORD002179,product_id,Reference missing from master,Consistency,Quarantine,Critical
+orders.csv,734,ORD001799,store_id,Reference missing from master,Consistency,Quarantine,Critical
+orders.csv,741,ORD001046,store_id,Reference missing from master,Consistency,Quarantine,Critical
+orders.csv,830,ORD001492,store_id,Reference missing from master,Consistency,Quarantine,Critical
+orders.csv,1010,ORD001275,store_id,Reference missing from master,Consistency,Quarantine,Critical
+orders.csv,1954,ORD002126,store_id,Reference missing from master,Consistency,Quarantine,Critical
+payments.csv,20,PAY0001651,payment_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+payments.csv,146,PAY0000755,payment_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+payments.csv,262,PAY0000509,payment_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+payments.csv,1031,PAY0000509,payment_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+payments.csv,1347,PAY0002000,payment_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+payments.csv,1854,PAY0001651,payment_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+payments.csv,1876,PAY0002000,payment_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+payments.csv,2118,PAY0000755,payment_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+payments.csv,145,PAY0000396,payment_ts,Date after reference date,Timeliness,Quarantine; verify reference date,Critical
+payments.csv,308,PAY0000127,payment_ts,Date after reference date,Timeliness,Quarantine; verify reference date,Critical
+payments.csv,410,PAY0001908,payment_ts,Date after reference date,Timeliness,Quarantine; verify reference date,Critical
+payments.csv,987,PAY0001037,payment_ts,Date after reference date,Timeliness,Quarantine; verify reference date,Critical
+payments.csv,1639,PAY0001488,payment_ts,Date after reference date,Timeliness,Quarantine; verify reference date,Critical
+payments.csv,1366,PAY0002113,payment_mode,Surrounding whitespace,Consistency,Trim in transformed data; preserve raw,Warning
+payments.csv,1418,PAY0001862,payment_mode,Surrounding whitespace,Consistency,Trim in transformed data; preserve raw,Warning
+payments.csv,821,PAY0001954,payment_mode,Unrecognised category,Validity,Quarantine,Critical
+payments.csv,1453,PAY0000522,payment_mode,Unrecognised category,Validity,Quarantine,Critical
+payments.csv,1624,PAY0000044,payment_mode,Unrecognised category,Validity,Quarantine,Critical
+payments.csv,70,PAY0001568,amount_paid,Negative value,Accuracy,Quarantine,Critical
+payments.csv,345,PAY0002175,amount_paid,Negative value,Accuracy,Quarantine,Critical
+payments.csv,433,PAY0000751,amount_paid,Negative value,Accuracy,Quarantine,Critical
+payments.csv,528,PAY0000944,amount_paid,Negative value,Accuracy,Quarantine,Critical
+payments.csv,652,PAY0000791,amount_paid,Negative value,Accuracy,Quarantine,Critical
+payments.csv,2172,PAY0000737,amount_paid,Negative value,Accuracy,Quarantine,Critical
+customers.csv,29,C00103,customer_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+customers.csv,45,C00103,customer_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+customers.csv,107,C00252,customer_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+customers.csv,143,C00036,customer_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+customers.csv,155,C00226,customer_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+customers.csv,209,C00313,customer_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+customers.csv,214,C00252,customer_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+customers.csv,245,C00226,customer_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+customers.csv,265,C00036,customer_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+customers.csv,381,C00313,customer_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+customers.csv,16,C00337,email,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,23,C00307,email,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,78,C00063,email,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,80,C00045,email,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,81,C00363,email,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,91,C00310,email,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,198,C00327,email,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,239,C00112,email,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,336,C00193,email,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,343,C00392,email,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,364,C00062,email,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,389,C00067,email,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,59,C00151,phone,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,116,C00240,phone,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,140,C00095,phone,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,152,C00357,phone,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,171,C00130,phone,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,233,C00290,phone,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,249,C00339,phone,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,3,C00355,city,Missing value,Completeness,Review requiredness; quarantine missing required fields,Warning
+customers.csv,201,C00394,city,Missing value,Completeness,Review requiredness; quarantine missing required fields,Warning
+customers.csv,275,C00233,city,Missing value,Completeness,Review requiredness; quarantine missing required fields,Warning
+customers.csv,292,C00142,city,Missing value,Completeness,Review requiredness; quarantine missing required fields,Warning
+customers.csv,309,C00328,city,Missing value,Completeness,Review requiredness; quarantine missing required fields,Warning
+customers.csv,369,C00219,city,Missing value,Completeness,Review requiredness; quarantine missing required fields,Warning
+customers.csv,37,C00132,pincode,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,108,C00083,pincode,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,150,C00166,pincode,Invalid format,Validity,Review and mask personal details in reporting,Warning
+customers.csv,85,C00400,signup_date,Date after reference date,Timeliness,Quarantine; verify reference date,Critical
+customers.csv,196,C00398,signup_date,Date after reference date,Timeliness,Quarantine; verify reference date,Critical
+customers.csv,238,C00038,signup_date,Date after reference date,Timeliness,Quarantine; verify reference date,Critical
+customers.csv,2,C00182,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,3,C00355,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,4,C00222,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,5,C00138,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,6,C00094,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,7,C00161,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,8,C00345,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,9,C00159,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,10,C00321,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,11,C00168,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,12,C00040,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,13,C00374,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,14,C00051,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,15,C00299,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,16,C00337,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,17,C00224,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,18,C00202,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,19,C00030,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,20,C00078,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,21,C00311,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,22,C00389,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,23,C00307,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,24,C00391,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,25,C00282,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,26,C00163,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,27,C00204,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,28,C00180,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,29,C00103,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,30,C00017,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,31,C00220,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,32,C00232,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,33,C00265,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,34,C00124,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,35,C00013,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,36,C00209,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,37,C00132,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,38,C00366,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,40,C00169,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,41,C00098,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,43,C00276,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,44,C00201,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,45,C00103,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,46,C00320,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,47,C00176,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,48,C00205,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,49,C00156,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,50,C00241,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,51,C00053,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,52,C00032,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,53,C00396,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,54,C00362,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,55,C00395,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,56,C00296,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,57,C00184,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,58,C00212,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,59,C00151,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,60,C00137,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,61,C00288,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,62,C00248,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,63,C00359,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,64,C00368,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,65,C00174,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,66,C00198,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,67,C00025,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,68,C00346,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,69,C00270,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,70,C00181,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,71,C00294,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,72,C00350,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,73,C00340,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,74,C00253,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,75,C00218,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,76,C00068,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,77,C00128,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,78,C00063,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,79,C00289,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,80,C00045,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,81,C00363,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,82,C00384,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,83,C00177,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,84,C00160,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,85,C00400,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,86,C00323,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,87,C00216,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,88,C00382,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,89,C00200,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,90,C00261,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,91,C00310,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,92,C00315,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,93,C00075,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,94,C00153,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,95,C00183,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,96,C00287,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,97,C00131,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,98,C00031,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,99,C00043,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,100,C00018,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,101,C00300,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,102,C00275,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,103,C00196,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,104,C00175,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,105,C00210,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,106,C00271,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,107,C00252,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,108,C00083,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,109,C00197,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,110,C00111,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,111,C00115,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,112,C00006,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,113,C00080,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,114,C00266,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,115,C00194,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,116,C00240,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,117,C00269,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,118,C00369,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,119,C00114,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,120,C00047,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,121,C00367,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,122,C00145,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,123,C00191,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,124,C00066,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,125,C00388,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,126,C00325,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,127,C00140,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,128,C00135,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,129,C00341,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,130,C00273,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,131,C00344,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,132,C00342,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,133,C00154,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,134,C00170,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,135,C00390,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,136,C00302,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,137,C00245,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,138,C00001,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,139,C00144,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,140,C00095,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,141,C00048,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,142,C00370,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,143,C00036,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,144,C00347,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,145,C00235,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,146,C00007,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,147,C00349,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,148,C00332,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,149,C00079,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,150,C00166,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,151,C00005,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,152,C00357,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,153,C00227,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,154,C00207,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,155,C00226,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,156,C00034,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,157,C00336,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,158,C00105,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,159,C00188,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,160,C00143,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,161,C00022,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,162,C00352,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,163,C00127,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,164,C00116,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,165,C00254,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,166,C00373,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,167,C00101,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,169,C00109,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,170,C00221,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,171,C00130,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,172,C00338,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,173,C00011,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,174,C00012,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,175,C00293,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,176,C00002,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,177,C00147,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,178,C00039,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,179,C00192,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,180,C00208,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,181,C00149,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,182,C00239,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,183,C00084,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,184,C00247,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,185,C00064,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,186,C00358,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,187,C00281,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,188,C00330,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,189,C00217,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,190,C00119,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,191,C00122,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,192,C00152,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,193,C00237,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,194,C00126,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,195,C00134,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,196,C00398,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,197,C00274,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,198,C00327,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,199,C00292,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,200,C00148,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,201,C00394,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,202,C00236,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,203,C00164,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,204,C00203,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,205,C00041,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,206,C00308,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,207,C00076,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,208,C00246,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,209,C00313,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,210,C00195,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,211,C00044,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,212,C00279,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,213,C00230,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,214,C00252,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,215,C00029,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,216,C00318,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,217,C00072,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,218,C00016,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,219,C00361,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,220,C00178,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,221,C00334,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,222,C00353,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,223,C00086,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,224,C00319,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,225,C00070,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,226,C00329,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,227,C00162,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,228,C00383,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,229,C00185,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,230,C00258,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,231,C00035,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,232,C00096,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,233,C00290,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,234,C00309,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,235,C00117,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,236,C00157,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,237,C00056,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,238,C00038,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,239,C00112,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,240,C00263,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,241,C00014,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,242,C00343,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,243,C00150,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,244,C00267,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,245,C00226,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,246,C00257,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,247,C00229,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,248,C00097,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,249,C00339,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,250,C00278,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,251,C00322,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,252,C00189,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,253,C00301,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,254,C00385,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,255,C00376,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,256,C00259,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,257,C00057,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,258,C00118,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,259,C00262,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,260,C00102,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,261,C00312,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,262,C00365,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,263,C00228,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,264,C00379,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,265,C00036,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,266,C00060,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,267,C00264,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,268,C00249,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,269,C00015,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,270,C00397,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,271,C00285,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,272,C00027,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,273,C00054,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,274,C00283,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,275,C00233,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,276,C00354,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,277,C00129,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,278,C00223,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,279,C00108,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,280,C00326,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,281,C00187,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,282,C00291,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,283,C00023,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,284,C00082,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,285,C00091,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,286,C00375,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,287,C00243,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,288,C00077,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,289,C00058,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,290,C00100,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,291,C00028,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,292,C00142,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,293,C00107,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,294,C00238,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,295,C00372,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,296,C00260,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,297,C00277,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,298,C00186,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,299,C00049,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,300,C00272,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,301,C00061,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,302,C00099,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,303,C00121,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,304,C00286,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,305,C00003,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,306,C00215,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,307,C00179,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,308,C00155,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,309,C00328,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,310,C00256,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,311,C00093,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,312,C00306,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,313,C00020,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,314,C00381,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,315,C00090,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,316,C00123,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,317,C00211,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,318,C00231,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,319,C00268,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,320,C00139,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,321,C00074,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,322,C00106,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,323,C00065,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,324,C00244,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,325,C00214,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,326,C00146,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,327,C00356,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,328,C00046,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,330,C00331,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,331,C00004,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,332,C00042,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,333,C00250,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,334,C00009,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,335,C00081,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,336,C00193,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,337,C00314,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,338,C00386,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,339,C00052,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,340,C00069,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,341,C00021,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,342,C00298,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,343,C00392,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,344,C00225,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,345,C00085,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,346,C00284,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,347,C00190,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,348,C00087,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,349,C00213,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,350,C00399,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,351,C00141,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,352,C00364,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,353,C00371,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,354,C00172,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,355,C00387,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,356,C00304,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,357,C00393,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,358,C00110,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,359,C00165,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,360,C00071,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,361,C00280,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,362,C00295,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,363,C00351,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,364,C00062,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,365,C00167,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,366,C00206,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,367,C00348,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,368,C00173,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,369,C00219,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,370,C00104,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,371,C00378,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,372,C00113,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,373,C00316,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,374,C00305,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,375,C00255,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,376,C00059,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,377,C00055,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,378,C00033,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,379,C00303,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,380,C00088,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,381,C00313,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,382,C00234,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,383,C00050,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,384,C00158,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,385,C00026,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,386,C00324,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,387,C00089,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,388,C00008,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,389,C00067,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,390,C00333,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,391,C00360,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,392,C00125,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,393,C00024,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,394,C00317,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,395,C00242,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,396,C00010,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,397,C00335,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,398,C00251,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,399,C00073,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,400,C00377,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,401,C00019,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,402,C00037,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,403,C00120,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,404,C00297,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+customers.csv,405,C00380,loyalty_tier,Noncanonical casing,Consistency,Standardise to uppercase,Warning
+products.csv,30,P0030,product_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+products.csv,140,P0140,product_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+products.csv,151,P0030,product_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+products.csv,152,P0140,product_id,Repeated key within this file,Uniqueness,Choose a deterministic survivor; quarantine conflicting duplicates,Critical
+products.csv,51,P0051,category,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+products.csv,60,P0060,category,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+products.csv,68,P0068,category,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+products.csv,109,P0109,mrp,Must be positive,Accuracy,Quarantine,Critical
+products.csv,19,P0019,cost_price,Cost exceeds MRP,Accuracy,Quarantine; confirm business rule,Critical
+products.csv,73,P0073,cost_price,Cost exceeds MRP,Accuracy,Quarantine; confirm business rule,Critical
+products.csv,74,P0074,cost_price,Cost exceeds MRP,Accuracy,Quarantine; confirm business rule,Critical
+products.csv,109,P0109,cost_price,Cost exceeds MRP,Accuracy,Quarantine; confirm business rule,Critical
+products.csv,117,P0117,cost_price,Cost exceeds MRP,Accuracy,Quarantine; confirm business rule,Critical
+stores.csv,7,S07,zone,Missing value,Completeness,Review requiredness; quarantine missing required fields,Critical
+stores.csv,12,S12,capacity_orders_per_day,Must be positive,Accuracy,Quarantine,Critical
+orders_2026-10-01_increment.csv,,<file>,order_ts,Latest order is older than one day,Timeliness,Warn; historical fixtures are expected to be stale,Warning
+payments.csv,70,PAY0001568,order_id/amount_paid,Successful payment differs from order amount,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,187,PAY0002219,order_id/amount_paid,Payment references missing order,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,305,PAY0000354,order_id/amount_paid,Successful payment differs from order amount,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,430,PAY0000779,order_id/amount_paid,Successful payment differs from order amount,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,688,PAY0002220,order_id/amount_paid,Payment references missing order,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,696,PAY0000323,order_id/amount_paid,Successful payment differs from order amount,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,767,PAY0001167,order_id/amount_paid,Successful payment differs from order amount,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,771,PAY0001499,order_id/amount_paid,Successful payment differs from order amount,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,932,PAY0000909,order_id/amount_paid,Successful payment differs from order amount,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,965,PAY0002223,order_id/amount_paid,Payment references missing order,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,993,PAY0000586,order_id/amount_paid,Successful payment differs from order amount,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,1109,PAY0000161,order_id/amount_paid,Successful payment differs from order amount,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,1148,PAY0002221,order_id/amount_paid,Payment references missing order,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,1410,PAY0002183,order_id/amount_paid,Successful payment differs from order amount,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,1446,PAY0002224,order_id/amount_paid,Payment references missing order,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,1624,PAY0000044,order_id/amount_paid,Successful payment differs from order amount,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,1650,PAY0001813,order_id/amount_paid,Successful payment differs from order amount,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,1789,PAY0002218,order_id/amount_paid,Payment references missing order,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,1923,PAY0001139,order_id/amount_paid,Successful payment differs from order amount,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,1973,PAY0002222,order_id/amount_paid,Payment references missing order,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,1983,PAY0000429,order_id/amount_paid,Successful payment differs from order amount,Consistency,Investigate reconciliation mismatch,Critical
+payments.csv,2215,PAY0002217,order_id/amount_paid,Payment references missing order,Consistency,Investigate reconciliation mismatch,Critical
+orders.csv,67,ORD000398,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,76,ORD001113,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,102,ORD000737,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,143,ORD000518,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,191,ORD000747,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,251,ORD002235,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,263,ORD000896,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,276,ORD001398,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,277,ORD000666,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,295,ORD001300,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,320,ORD002078,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,460,ORD001570,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,473,ORD000106,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,525,ORD001613,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,547,ORD000994,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,597,ORD001842,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,600,ORD000564,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,634,ORD000580,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,657,ORD000751,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,664,ORD000984,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,682,ORD000090,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,720,ORD000504,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,812,ORD001371,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,826,ORD001954,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,830,ORD001492,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,838,ORD001881,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,921,ORD000899,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,977,ORD000525,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1023,ORD000805,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1034,ORD001848,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1038,ORD001543,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1107,ORD002264,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1112,ORD000606,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1144,ORD002129,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1166,ORD001474,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1170,ORD001103,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1212,ORD000633,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1247,ORD001218,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1262,ORD001292,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1269,ORD002178,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1308,ORD001695,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1339,ORD001730,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1349,ORD001131,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1378,ORD002242,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1437,ORD000652,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1473,ORD000085,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1481,ORD001788,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1493,ORD001982,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1541,ORD001225,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1542,ORD001714,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1627,ORD000566,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1641,ORD002129,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1726,ORD000895,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1729,ORD001351,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1844,ORD000381,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1869,ORD000187,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1943,ORD000506,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,1988,ORD002106,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,2020,ORD001645,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,2050,ORD002212,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,2068,ORD000466,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,2137,ORD000501,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,2175,ORD000543,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,2192,ORD002252,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,2217,ORD000961,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,2222,ORD000673,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,2236,ORD002326,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,2238,ORD000057,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,2266,ORD000127,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,2269,ORD000389,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,2292,ORD000707,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning
+orders.csv,2349,ORD001284,order_id,Delivered order has no successful payment,Consistency,Review settlement timing and Cash on Delivery policy,Warning

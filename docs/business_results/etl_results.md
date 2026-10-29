@@ -1,0 +1,694 @@
+# ETL: business SQL and actual results
+
+Warehouse: `include/warehouse_vijayc5.duckdb`. Selected successful run: `scheduled__2026-10-29T03:30:00+00:00`. Audit end time: `2026-10-29T03:30:32.782688+00:00`.
+
+Q1–Q5 revenue/delivery/spend cover September 2026 and only approved DELIVERED orders. Q4b covers all exceptions in the current reconciliation snapshot, including undated/orphan records; it is not a September-only ledger or a proven total loss. Unknown amounts remain unknown. Q6 means records rejected in the selected processing run, not orders whose business date is today. Reason counts overlap; use FILE TOTAL for distinct source records per file. Q1 includes zone subtotals and store rows: do not add both levels together.
+
+## Q1 — Daily net revenue by zone and store
+
+```sql
+SELECT order_date, zone,
+ CASE WHEN grouping(store_id)=1 THEN 'ZONE TOTAL' ELSE 'STORE' END AS level,
+ store_id, round(sum(net_revenue),2) AS net_revenue
+FROM etl_fact_orders
+WHERE order_status='DELIVERED' AND order_date >= DATE '2026-09-01' AND order_date < DATE '2026-10-01'
+GROUP BY GROUPING SETS ((order_date,zone),(order_date,zone,store_id))
+ORDER BY order_date,zone,level,store_id;
+```
+
+Result: 500 rows.
+
+| order_date | zone | level | store_id | net_revenue |
+| --- | --- | --- | --- | --- |
+| 2026-09-01 | East | STORE | S08 | 2984.7 |
+| 2026-09-01 | East | STORE | S09 | 2089.6 |
+| 2026-09-01 | East | STORE | S10 | 2141.6 |
+| 2026-09-01 | East | STORE | S11 | 1757.15 |
+| 2026-09-01 | East | ZONE TOTAL | NULL | 8973.05 |
+| 2026-09-01 | North | STORE | S01 | 1410.8 |
+| 2026-09-01 | North | STORE | S02 | 2385.55 |
+| 2026-09-01 | North | STORE | S03 | 4178.8 |
+| 2026-09-01 | North | ZONE TOTAL | NULL | 7975.15 |
+| 2026-09-01 | South | STORE | S05 | 803.0 |
+| 2026-09-01 | South | STORE | S06 | 2812.0 |
+| 2026-09-01 | South | ZONE TOTAL | NULL | 3615.0 |
+| 2026-09-01 | West | STORE | S13 | 1469.1 |
+| 2026-09-01 | West | STORE | S14 | 1749.45 |
+| 2026-09-01 | West | STORE | S15 | 925.2 |
+| 2026-09-01 | West | ZONE TOTAL | NULL | 4143.75 |
+| 2026-09-02 | East | STORE | S08 | 1019.6 |
+| 2026-09-02 | East | STORE | S09 | 2944.9 |
+| 2026-09-02 | East | STORE | S10 | 2996.9 |
+| 2026-09-02 | East | STORE | S11 | 859.2 |
+| 2026-09-02 | East | ZONE TOTAL | NULL | 7820.6 |
+| 2026-09-02 | North | STORE | S01 | 1125.0 |
+| 2026-09-02 | North | STORE | S02 | 889.2 |
+| 2026-09-02 | North | STORE | S03 | 1559.6 |
+| 2026-09-02 | North | ZONE TOTAL | NULL | 3573.8 |
+| 2026-09-02 | South | STORE | S04 | 3867.1 |
+| 2026-09-02 | South | STORE | S05 | 3759.5 |
+| 2026-09-02 | South | STORE | S06 | 2038.8 |
+| 2026-09-02 | South | ZONE TOTAL | NULL | 9665.4 |
+| 2026-09-02 | West | STORE | S13 | 755.15 |
+| 2026-09-02 | West | STORE | S14 | 3762.9 |
+| 2026-09-02 | West | STORE | S15 | 3581.3 |
+| 2026-09-02 | West | ZONE TOTAL | NULL | 8099.35 |
+| 2026-09-03 | East | STORE | S08 | 1660.45 |
+| 2026-09-03 | East | STORE | S09 | 2858.75 |
+| 2026-09-03 | East | STORE | S10 | 1842.5 |
+| 2026-09-03 | East | STORE | S11 | 5000.7 |
+| 2026-09-03 | East | ZONE TOTAL | NULL | 11362.4 |
+| 2026-09-03 | North | STORE | S01 | 2655.0 |
+| 2026-09-03 | North | STORE | S02 | 6597.85 |
+| 2026-09-03 | North | STORE | S03 | 4328.3 |
+| 2026-09-03 | North | ZONE TOTAL | NULL | 13581.15 |
+| 2026-09-03 | South | STORE | S04 | 138.6 |
+| 2026-09-03 | South | STORE | S05 | 2693.0 |
+| 2026-09-03 | South | STORE | S06 | 4646.8 |
+| 2026-09-03 | South | ZONE TOTAL | NULL | 7478.4 |
+| 2026-09-03 | West | STORE | S13 | 519.3 |
+| 2026-09-03 | West | STORE | S14 | 4695.3 |
+| 2026-09-03 | West | STORE | S15 | 3316.65 |
+| 2026-09-03 | West | ZONE TOTAL | NULL | 8531.25 |
+| 2026-09-04 | East | STORE | S08 | 1772.1 |
+| 2026-09-04 | East | STORE | S09 | 1368.7 |
+| 2026-09-04 | East | STORE | S10 | 2743.8 |
+| 2026-09-04 | East | STORE | S11 | 3453.4 |
+| 2026-09-04 | East | ZONE TOTAL | NULL | 9338.0 |
+| 2026-09-04 | North | STORE | S01 | 427.0 |
+| 2026-09-04 | North | STORE | S02 | 1026.4 |
+| 2026-09-04 | North | STORE | S03 | 1094.4 |
+| 2026-09-04 | North | ZONE TOTAL | NULL | 2547.8 |
+| 2026-09-04 | South | STORE | S04 | 3335.3 |
+| 2026-09-04 | South | STORE | S05 | 681.95 |
+| 2026-09-04 | South | STORE | S06 | 743.8 |
+| 2026-09-04 | South | ZONE TOTAL | NULL | 4761.05 |
+| 2026-09-04 | West | STORE | S13 | 984.0 |
+| 2026-09-04 | West | STORE | S14 | 4294.3 |
+| 2026-09-04 | West | STORE | S15 | 1087.4 |
+| 2026-09-04 | West | ZONE TOTAL | NULL | 6365.7 |
+| 2026-09-05 | East | STORE | S08 | 1460.7 |
+| 2026-09-05 | East | STORE | S09 | 3297.55 |
+| 2026-09-05 | East | STORE | S10 | 416.0 |
+| 2026-09-05 | East | STORE | S11 | 228.0 |
+| 2026-09-05 | East | ZONE TOTAL | NULL | 5402.25 |
+| 2026-09-05 | North | STORE | S01 | 1419.55 |
+| 2026-09-05 | North | STORE | S02 | 184.45 |
+| 2026-09-05 | North | STORE | S03 | 1123.05 |
+| 2026-09-05 | North | ZONE TOTAL | NULL | 2727.05 |
+| 2026-09-05 | South | STORE | S04 | 1286.4 |
+| 2026-09-05 | South | STORE | S05 | 3292.0 |
+| 2026-09-05 | South | STORE | S06 | 1211.0 |
+| 2026-09-05 | South | ZONE TOTAL | NULL | 5789.4 |
+| 2026-09-05 | West | STORE | S13 | 1973.2 |
+| 2026-09-05 | West | STORE | S14 | 1239.1 |
+| 2026-09-05 | West | STORE | S15 | 2093.05 |
+| 2026-09-05 | West | ZONE TOTAL | NULL | 5305.35 |
+| 2026-09-06 | East | STORE | S08 | 2418.2 |
+| 2026-09-06 | East | STORE | S09 | 3148.4 |
+| 2026-09-06 | East | STORE | S10 | 1650.15 |
+| 2026-09-06 | East | STORE | S11 | 3322.4 |
+| 2026-09-06 | East | ZONE TOTAL | NULL | 10539.15 |
+| 2026-09-06 | North | STORE | S01 | 2333.8 |
+| 2026-09-06 | North | STORE | S02 | 1013.7 |
+| 2026-09-06 | North | STORE | S03 | 5448.4 |
+| 2026-09-06 | North | ZONE TOTAL | NULL | 8795.9 |
+| 2026-09-06 | South | STORE | S04 | 3080.65 |
+| 2026-09-06 | South | STORE | S05 | 3585.0 |
+| 2026-09-06 | South | STORE | S06 | 2630.4 |
+| 2026-09-06 | South | ZONE TOTAL | NULL | 9296.05 |
+| 2026-09-06 | West | STORE | S13 | 3087.0 |
+| 2026-09-06 | West | STORE | S14 | 307.45 |
+| 2026-09-06 | West | STORE | S15 | 8227.7 |
+| 2026-09-06 | West | ZONE TOTAL | NULL | 11622.15 |
+| 2026-09-07 | East | STORE | S08 | 1846.4 |
+| 2026-09-07 | East | STORE | S10 | 2433.45 |
+| 2026-09-07 | East | STORE | S11 | 824.0 |
+| 2026-09-07 | East | ZONE TOTAL | NULL | 5103.85 |
+| 2026-09-07 | North | STORE | S01 | 355.5 |
+| 2026-09-07 | North | STORE | S02 | 492.0 |
+| 2026-09-07 | North | STORE | S03 | 4380.4 |
+| 2026-09-07 | North | ZONE TOTAL | NULL | 5227.9 |
+| 2026-09-07 | South | STORE | S04 | 2169.2 |
+| 2026-09-07 | South | STORE | S05 | 3542.55 |
+| 2026-09-07 | South | STORE | S06 | 4557.65 |
+| 2026-09-07 | South | ZONE TOTAL | NULL | 10269.4 |
+| 2026-09-07 | West | STORE | S13 | 4869.1 |
+| 2026-09-07 | West | STORE | S14 | 1632.55 |
+| 2026-09-07 | West | STORE | S15 | 1750.9 |
+| 2026-09-07 | West | ZONE TOTAL | NULL | 8252.55 |
+| 2026-09-08 | East | STORE | S08 | 1187.85 |
+| 2026-09-08 | East | STORE | S09 | 643.15 |
+| 2026-09-08 | East | STORE | S10 | 358.4 |
+| 2026-09-08 | East | STORE | S11 | 1378.35 |
+| 2026-09-08 | East | ZONE TOTAL | NULL | 3567.75 |
+| 2026-09-08 | North | STORE | S01 | 2062.2 |
+| 2026-09-08 | North | STORE | S02 | 2919.25 |
+| 2026-09-08 | North | STORE | S03 | 1327.8 |
+| 2026-09-08 | North | ZONE TOTAL | NULL | 6309.25 |
+| 2026-09-08 | South | STORE | S04 | 900.0 |
+| 2026-09-08 | South | STORE | S05 | 2877.1 |
+| 2026-09-08 | South | STORE | S06 | 3136.7 |
+| 2026-09-08 | South | ZONE TOTAL | NULL | 6913.8 |
+| 2026-09-08 | West | STORE | S13 | 825.65 |
+| 2026-09-08 | West | STORE | S14 | 2000.3 |
+| 2026-09-08 | West | STORE | S15 | 1906.05 |
+| 2026-09-08 | West | ZONE TOTAL | NULL | 4732.0 |
+| 2026-09-09 | East | STORE | S08 | 2912.5 |
+| 2026-09-09 | East | STORE | S09 | 1569.85 |
+| 2026-09-09 | East | STORE | S10 | 1818.2 |
+| 2026-09-09 | East | STORE | S11 | 1452.45 |
+| 2026-09-09 | East | ZONE TOTAL | NULL | 7753.0 |
+| 2026-09-09 | North | STORE | S01 | 2014.0 |
+| 2026-09-09 | North | STORE | S02 | 3922.95 |
+| 2026-09-09 | North | ZONE TOTAL | NULL | 5936.95 |
+| 2026-09-09 | South | STORE | S04 | 1204.7 |
+| 2026-09-09 | South | STORE | S05 | 2035.45 |
+| 2026-09-09 | South | STORE | S06 | 4084.8 |
+| 2026-09-09 | South | ZONE TOTAL | NULL | 7324.95 |
+| 2026-09-09 | West | STORE | S13 | 414.4 |
+| 2026-09-09 | West | STORE | S14 | 2153.8 |
+| 2026-09-09 | West | STORE | S15 | 3411.6 |
+| 2026-09-09 | West | ZONE TOTAL | NULL | 5979.8 |
+| 2026-09-10 | East | STORE | S08 | 3589.8 |
+| 2026-09-10 | East | STORE | S09 | 1917.6 |
+| 2026-09-10 | East | STORE | S10 | 2026.05 |
+| 2026-09-10 | East | STORE | S11 | 2466.15 |
+| 2026-09-10 | East | ZONE TOTAL | NULL | 9999.6 |
+| 2026-09-10 | North | STORE | S01 | 4023.95 |
+| 2026-09-10 | North | STORE | S02 | 3511.1 |
+| 2026-09-10 | North | STORE | S03 | 6143.7 |
+| 2026-09-10 | North | ZONE TOTAL | NULL | 13678.75 |
+| 2026-09-10 | South | STORE | S04 | 856.6 |
+| 2026-09-10 | South | STORE | S05 | 1431.8 |
+| 2026-09-10 | South | ZONE TOTAL | NULL | 2288.4 |
+| 2026-09-10 | West | STORE | S13 | 1750.4 |
+| 2026-09-10 | West | STORE | S15 | 1519.6 |
+| 2026-09-10 | West | ZONE TOTAL | NULL | 3270.0 |
+| 2026-09-11 | East | STORE | S08 | 3830.95 |
+| 2026-09-11 | East | STORE | S09 | 3679.9 |
+| 2026-09-11 | East | STORE | S10 | 3619.15 |
+| 2026-09-11 | East | STORE | S11 | 262.4 |
+| 2026-09-11 | East | ZONE TOTAL | NULL | 11392.4 |
+| 2026-09-11 | North | STORE | S01 | 688.0 |
+| 2026-09-11 | North | STORE | S02 | 1772.7 |
+| 2026-09-11 | North | STORE | S03 | 4035.75 |
+| 2026-09-11 | North | ZONE TOTAL | NULL | 6496.45 |
+| 2026-09-11 | South | STORE | S04 | 1127.65 |
+| 2026-09-11 | South | STORE | S06 | 1392.5 |
+| 2026-09-11 | South | ZONE TOTAL | NULL | 2520.15 |
+| 2026-09-11 | West | STORE | S13 | 2404.0 |
+| 2026-09-11 | West | STORE | S14 | 67.0 |
+| 2026-09-11 | West | STORE | S15 | 2918.35 |
+| 2026-09-11 | West | ZONE TOTAL | NULL | 5389.35 |
+| 2026-09-12 | East | STORE | S08 | 1137.15 |
+| 2026-09-12 | East | STORE | S09 | 4337.05 |
+| 2026-09-12 | East | STORE | S10 | 394.0 |
+| 2026-09-12 | East | STORE | S11 | 2494.2 |
+| 2026-09-12 | East | ZONE TOTAL | NULL | 8362.4 |
+| 2026-09-12 | North | STORE | S01 | 2037.5 |
+| 2026-09-12 | North | STORE | S02 | 339.6 |
+| 2026-09-12 | North | STORE | S03 | 2095.8 |
+| 2026-09-12 | North | ZONE TOTAL | NULL | 4472.9 |
+| 2026-09-12 | South | STORE | S04 | 2780.05 |
+| 2026-09-12 | South | STORE | S05 | 1483.0 |
+| 2026-09-12 | South | STORE | S06 | 1080.0 |
+| 2026-09-12 | South | ZONE TOTAL | NULL | 5343.05 |
+| 2026-09-12 | West | STORE | S13 | 5736.3 |
+| 2026-09-12 | West | STORE | S14 | 2916.95 |
+| 2026-09-12 | West | STORE | S15 | 5380.95 |
+| 2026-09-12 | West | ZONE TOTAL | NULL | 14034.2 |
+| 2026-09-13 | East | STORE | S08 | 5568.15 |
+| 2026-09-13 | East | STORE | S09 | 2163.8 |
+| 2026-09-13 | East | STORE | S10 | 1084.8 |
+| 2026-09-13 | East | STORE | S11 | 4176.7 |
+| 2026-09-13 | East | ZONE TOTAL | NULL | 12993.45 |
+| 2026-09-13 | North | STORE | S01 | 2625.0 |
+| 2026-09-13 | North | STORE | S02 | 1245.4 |
+| 2026-09-13 | North | STORE | S03 | 1648.5 |
+| 2026-09-13 | North | ZONE TOTAL | NULL | 5518.9 |
+| 2026-09-13 | South | STORE | S04 | 3371.35 |
+| 2026-09-13 | South | STORE | S05 | 3416.8 |
+| 2026-09-13 | South | STORE | S06 | 341.0 |
+| 2026-09-13 | South | ZONE TOTAL | NULL | 7129.15 |
+| 2026-09-13 | West | STORE | S13 | 2486.0 |
+| 2026-09-13 | West | STORE | S14 | 2737.0 |
+| 2026-09-13 | West | STORE | S15 | 944.75 |
+| 2026-09-13 | West | ZONE TOTAL | NULL | 6167.75 |
+| 2026-09-14 | East | STORE | S08 | 986.4 |
+| 2026-09-14 | East | STORE | S09 | 5531.7 |
+| 2026-09-14 | East | STORE | S10 | 6544.9 |
+| 2026-09-14 | East | STORE | S11 | 938.45 |
+| 2026-09-14 | East | ZONE TOTAL | NULL | 14001.45 |
+| 2026-09-14 | North | STORE | S01 | 3276.25 |
+| 2026-09-14 | North | STORE | S02 | 2203.6 |
+| 2026-09-14 | North | STORE | S03 | 2764.9 |
+| 2026-09-14 | North | ZONE TOTAL | NULL | 8244.75 |
+| 2026-09-14 | South | STORE | S04 | 1239.0 |
+| 2026-09-14 | South | STORE | S05 | 1172.0 |
+| 2026-09-14 | South | STORE | S06 | 1329.0 |
+| 2026-09-14 | South | ZONE TOTAL | NULL | 3740.0 |
+| 2026-09-14 | West | STORE | S13 | 3203.4 |
+| 2026-09-14 | West | STORE | S14 | 645.2 |
+| 2026-09-14 | West | STORE | S15 | 1605.0 |
+| 2026-09-14 | West | ZONE TOTAL | NULL | 5453.6 |
+| 2026-09-15 | East | STORE | S08 | 9.9 |
+| 2026-09-15 | East | STORE | S09 | 3549.0 |
+| 2026-09-15 | East | STORE | S10 | 984.3 |
+| 2026-09-15 | East | STORE | S11 | 2470.8 |
+| 2026-09-15 | East | ZONE TOTAL | NULL | 7014.0 |
+| 2026-09-15 | North | STORE | S01 | 4583.05 |
+| 2026-09-15 | North | STORE | S02 | 1630.3 |
+| 2026-09-15 | North | STORE | S03 | 1787.8 |
+| 2026-09-15 | North | ZONE TOTAL | NULL | 8001.15 |
+| 2026-09-15 | South | STORE | S04 | 1882.0 |
+| 2026-09-15 | South | STORE | S05 | 411.0 |
+| 2026-09-15 | South | STORE | S06 | 1345.2 |
+| 2026-09-15 | South | ZONE TOTAL | NULL | 3638.2 |
+| 2026-09-15 | West | STORE | S13 | 1131.8 |
+| 2026-09-15 | West | STORE | S14 | 3378.4 |
+| 2026-09-15 | West | STORE | S15 | 1845.7 |
+| 2026-09-15 | West | ZONE TOTAL | NULL | 6355.9 |
+| 2026-09-16 | East | STORE | S08 | 2494.55 |
+| 2026-09-16 | East | STORE | S09 | 2256.55 |
+| 2026-09-16 | East | STORE | S10 | 3714.0 |
+| 2026-09-16 | East | STORE | S11 | 2403.2 |
+| 2026-09-16 | East | ZONE TOTAL | NULL | 10868.3 |
+| 2026-09-16 | North | STORE | S01 | 1805.05 |
+| 2026-09-16 | North | STORE | S02 | 2698.0 |
+| 2026-09-16 | North | STORE | S03 | 2674.85 |
+| 2026-09-16 | North | ZONE TOTAL | NULL | 7177.9 |
+| 2026-09-16 | South | STORE | S04 | 1231.3 |
+| 2026-09-16 | South | STORE | S05 | 2857.55 |
+| 2026-09-16 | South | STORE | S06 | 6657.2 |
+| 2026-09-16 | South | ZONE TOTAL | NULL | 10746.05 |
+| 2026-09-16 | West | STORE | S13 | 1530.0 |
+| 2026-09-16 | West | STORE | S14 | 2000.05 |
+| 2026-09-16 | West | STORE | S15 | 873.9 |
+| 2026-09-16 | West | ZONE TOTAL | NULL | 4403.95 |
+| 2026-09-17 | East | STORE | S08 | 2178.2 |
+| 2026-09-17 | East | STORE | S09 | 1686.9 |
+| 2026-09-17 | East | STORE | S10 | 1584.9 |
+| 2026-09-17 | East | STORE | S11 | 1550.25 |
+| 2026-09-17 | East | ZONE TOTAL | NULL | 7000.25 |
+| 2026-09-17 | North | STORE | S01 | 3614.6 |
+| 2026-09-17 | North | STORE | S02 | 558.0 |
+| 2026-09-17 | North | STORE | S03 | 2497.0 |
+| 2026-09-17 | North | ZONE TOTAL | NULL | 6669.6 |
+| 2026-09-17 | South | STORE | S04 | 2283.2 |
+| 2026-09-17 | South | STORE | S05 | 1344.6 |
+| 2026-09-17 | South | STORE | S06 | 5989.15 |
+| 2026-09-17 | South | ZONE TOTAL | NULL | 9616.95 |
+| 2026-09-17 | West | STORE | S13 | 3202.3 |
+| 2026-09-17 | West | STORE | S14 | 3680.0 |
+| 2026-09-17 | West | STORE | S15 | 3326.0 |
+| 2026-09-17 | West | ZONE TOTAL | NULL | 10208.3 |
+| 2026-09-18 | East | STORE | S08 | 2670.8 |
+| 2026-09-18 | East | STORE | S09 | 9.0 |
+| 2026-09-18 | East | STORE | S10 | 6683.0 |
+| 2026-09-18 | East | STORE | S11 | 1973.8 |
+| 2026-09-18 | East | ZONE TOTAL | NULL | 11336.6 |
+| 2026-09-18 | North | STORE | S01 | 1684.6 |
+| 2026-09-18 | North | STORE | S02 | 1559.7 |
+| 2026-09-18 | North | STORE | S03 | 666.0 |
+| 2026-09-18 | North | ZONE TOTAL | NULL | 3910.3 |
+| 2026-09-18 | South | STORE | S04 | 896.0 |
+| 2026-09-18 | South | STORE | S05 | 3661.2 |
+| 2026-09-18 | South | STORE | S06 | 217.0 |
+| 2026-09-18 | South | ZONE TOTAL | NULL | 4774.2 |
+| 2026-09-18 | West | STORE | S13 | 2700.8 |
+| 2026-09-18 | West | STORE | S14 | 2469.0 |
+| 2026-09-18 | West | STORE | S15 | 1317.1 |
+| 2026-09-18 | West | ZONE TOTAL | NULL | 6486.9 |
+| 2026-09-19 | East | STORE | S08 | 1253.5 |
+| 2026-09-19 | East | STORE | S09 | 1374.85 |
+| 2026-09-19 | East | STORE | S10 | 1606.25 |
+| 2026-09-19 | East | STORE | S11 | 2986.8 |
+| 2026-09-19 | East | ZONE TOTAL | NULL | 7221.4 |
+| 2026-09-19 | North | STORE | S01 | 4641.05 |
+| 2026-09-19 | North | STORE | S02 | 9732.0 |
+| 2026-09-19 | North | STORE | S03 | 2647.4 |
+| 2026-09-19 | North | ZONE TOTAL | NULL | 17020.45 |
+| 2026-09-19 | South | STORE | S04 | 1572.2 |
+| 2026-09-19 | South | STORE | S05 | 2950.8 |
+| 2026-09-19 | South | STORE | S06 | 2936.1 |
+| 2026-09-19 | South | ZONE TOTAL | NULL | 7459.1 |
+| 2026-09-19 | West | STORE | S13 | 7889.7 |
+| 2026-09-19 | West | STORE | S14 | 5163.9 |
+| 2026-09-19 | West | STORE | S15 | 3824.0 |
+| 2026-09-19 | West | ZONE TOTAL | NULL | 16877.6 |
+| 2026-09-20 | East | STORE | S08 | 2346.45 |
+| 2026-09-20 | East | STORE | S09 | 933.25 |
+| 2026-09-20 | East | STORE | S10 | 4258.6 |
+| 2026-09-20 | East | STORE | S11 | 1882.65 |
+| 2026-09-20 | East | ZONE TOTAL | NULL | 9420.95 |
+| 2026-09-20 | North | STORE | S01 | 6060.4 |
+| 2026-09-20 | North | STORE | S02 | 1357.2 |
+| 2026-09-20 | North | STORE | S03 | 98.8 |
+| 2026-09-20 | North | ZONE TOTAL | NULL | 7516.4 |
+| 2026-09-20 | South | STORE | S04 | 2911.8 |
+| 2026-09-20 | South | STORE | S05 | 4013.1 |
+| 2026-09-20 | South | STORE | S06 | 578.0 |
+| 2026-09-20 | South | ZONE TOTAL | NULL | 7502.9 |
+| 2026-09-20 | West | STORE | S13 | 2535.0 |
+| 2026-09-20 | West | STORE | S14 | 571.95 |
+| 2026-09-20 | West | STORE | S15 | 1929.8 |
+| 2026-09-20 | West | ZONE TOTAL | NULL | 5036.75 |
+| 2026-09-21 | East | STORE | S08 | 2931.2 |
+| 2026-09-21 | East | STORE | S09 | 1919.75 |
+| 2026-09-21 | East | STORE | S10 | 3664.5 |
+| 2026-09-21 | East | STORE | S11 | 230.0 |
+| 2026-09-21 | East | ZONE TOTAL | NULL | 8745.45 |
+| 2026-09-21 | North | STORE | S01 | 629.85 |
+| 2026-09-21 | North | STORE | S02 | 1686.1 |
+| 2026-09-21 | North | STORE | S03 | 1172.2 |
+| 2026-09-21 | North | ZONE TOTAL | NULL | 3488.15 |
+| 2026-09-21 | South | STORE | S04 | 2122.3 |
+| 2026-09-21 | South | STORE | S05 | 1022.2 |
+| 2026-09-21 | South | STORE | S06 | 2690.1 |
+| 2026-09-21 | South | ZONE TOTAL | NULL | 5834.6 |
+| 2026-09-21 | West | STORE | S13 | 1170.7 |
+| 2026-09-21 | West | STORE | S14 | 799.5 |
+| 2026-09-21 | West | STORE | S15 | 3578.05 |
+| 2026-09-21 | West | ZONE TOTAL | NULL | 5548.25 |
+| 2026-09-22 | East | STORE | S08 | 1896.55 |
+| 2026-09-22 | East | STORE | S09 | 1509.6 |
+| 2026-09-22 | East | STORE | S10 | 1646.45 |
+| 2026-09-22 | East | STORE | S11 | 2095.85 |
+| 2026-09-22 | East | ZONE TOTAL | NULL | 7148.45 |
+| 2026-09-22 | North | STORE | S02 | 2942.75 |
+| 2026-09-22 | North | STORE | S03 | 966.7 |
+| 2026-09-22 | North | ZONE TOTAL | NULL | 3909.45 |
+| 2026-09-22 | South | STORE | S04 | 759.8 |
+| 2026-09-22 | South | STORE | S05 | 541.7 |
+| 2026-09-22 | South | STORE | S06 | 1761.8 |
+| 2026-09-22 | South | ZONE TOTAL | NULL | 3063.3 |
+| 2026-09-22 | West | STORE | S13 | 1343.9 |
+| 2026-09-22 | West | STORE | S14 | 2600.4 |
+| 2026-09-22 | West | STORE | S15 | 413.7 |
+| 2026-09-22 | West | ZONE TOTAL | NULL | 4358.0 |
+| 2026-09-23 | East | STORE | S08 | 3685.4 |
+| 2026-09-23 | East | STORE | S09 | 1037.2 |
+| 2026-09-23 | East | STORE | S10 | 411.0 |
+| 2026-09-23 | East | STORE | S11 | 672.3 |
+| 2026-09-23 | East | ZONE TOTAL | NULL | 5805.9 |
+| 2026-09-23 | North | STORE | S01 | 2255.4 |
+| 2026-09-23 | North | STORE | S02 | 391.9 |
+| 2026-09-23 | North | STORE | S03 | 1625.65 |
+| 2026-09-23 | North | ZONE TOTAL | NULL | 4272.95 |
+| 2026-09-23 | South | STORE | S04 | 2737.0 |
+| 2026-09-23 | South | STORE | S05 | 2447.45 |
+| 2026-09-23 | South | STORE | S06 | 2327.8 |
+| 2026-09-23 | South | ZONE TOTAL | NULL | 7512.25 |
+| 2026-09-23 | West | STORE | S13 | 2725.45 |
+| 2026-09-23 | West | STORE | S14 | 3924.6 |
+| 2026-09-23 | West | STORE | S15 | 733.3 |
+| 2026-09-23 | West | ZONE TOTAL | NULL | 7383.35 |
+| 2026-09-24 | East | STORE | S08 | 1185.0 |
+| 2026-09-24 | East | STORE | S09 | 696.35 |
+| 2026-09-24 | East | STORE | S10 | 2114.3 |
+| 2026-09-24 | East | STORE | S11 | 1204.8 |
+| 2026-09-24 | East | ZONE TOTAL | NULL | 5200.45 |
+| 2026-09-24 | North | STORE | S01 | 2636.0 |
+| 2026-09-24 | North | STORE | S02 | 3552.45 |
+| 2026-09-24 | North | STORE | S03 | 675.75 |
+| 2026-09-24 | North | ZONE TOTAL | NULL | 6864.2 |
+| 2026-09-24 | South | STORE | S05 | 5233.7 |
+| 2026-09-24 | South | STORE | S06 | 1817.0 |
+| 2026-09-24 | South | ZONE TOTAL | NULL | 7050.7 |
+| 2026-09-24 | West | STORE | S13 | 2085.85 |
+| 2026-09-24 | West | STORE | S14 | 2599.8 |
+| 2026-09-24 | West | STORE | S15 | 274.3 |
+| 2026-09-24 | West | ZONE TOTAL | NULL | 4959.95 |
+| 2026-09-25 | East | STORE | S08 | 1918.3 |
+| 2026-09-25 | East | STORE | S09 | 1102.2 |
+| 2026-09-25 | East | STORE | S10 | 3030.8 |
+| 2026-09-25 | East | STORE | S11 | 633.15 |
+| 2026-09-25 | East | ZONE TOTAL | NULL | 6684.45 |
+| 2026-09-25 | North | STORE | S01 | 1040.15 |
+| 2026-09-25 | North | STORE | S02 | 2578.45 |
+| 2026-09-25 | North | ZONE TOTAL | NULL | 3618.6 |
+| 2026-09-25 | South | STORE | S04 | 2920.0 |
+| 2026-09-25 | South | STORE | S05 | 1076.0 |
+| 2026-09-25 | South | STORE | S06 | 4602.65 |
+| 2026-09-25 | South | ZONE TOTAL | NULL | 8598.65 |
+| 2026-09-25 | West | STORE | S13 | 3164.2 |
+| 2026-09-25 | West | STORE | S14 | 2108.25 |
+| 2026-09-25 | West | STORE | S15 | 1197.0 |
+| 2026-09-25 | West | ZONE TOTAL | NULL | 6469.45 |
+| 2026-09-26 | East | STORE | S08 | 2621.55 |
+| 2026-09-26 | East | STORE | S09 | 1018.15 |
+| 2026-09-26 | East | STORE | S10 | 2908.4 |
+| 2026-09-26 | East | STORE | S11 | 6688.1 |
+| 2026-09-26 | East | ZONE TOTAL | NULL | 13236.2 |
+| 2026-09-26 | North | STORE | S01 | 2495.4 |
+| 2026-09-26 | North | STORE | S02 | 2358.15 |
+| 2026-09-26 | North | STORE | S03 | 3854.75 |
+| 2026-09-26 | North | ZONE TOTAL | NULL | 8708.3 |
+| 2026-09-26 | South | STORE | S04 | 2081.1 |
+| 2026-09-26 | South | STORE | S05 | 7751.2 |
+| 2026-09-26 | South | STORE | S06 | 5680.4 |
+| 2026-09-26 | South | ZONE TOTAL | NULL | 15512.7 |
+| 2026-09-26 | West | STORE | S13 | 841.25 |
+| 2026-09-26 | West | STORE | S14 | 923.3 |
+| 2026-09-26 | West | STORE | S15 | 901.0 |
+| 2026-09-26 | West | ZONE TOTAL | NULL | 2665.55 |
+| 2026-09-27 | East | STORE | S08 | 4433.6 |
+| 2026-09-27 | East | STORE | S09 | 1812.2 |
+| 2026-09-27 | East | STORE | S10 | 2405.2 |
+| 2026-09-27 | East | STORE | S11 | 1627.2 |
+| 2026-09-27 | East | ZONE TOTAL | NULL | 10278.2 |
+| 2026-09-27 | North | STORE | S01 | 865.55 |
+| 2026-09-27 | North | STORE | S03 | 2189.2 |
+| 2026-09-27 | North | ZONE TOTAL | NULL | 3054.75 |
+| 2026-09-27 | South | STORE | S04 | 3110.3 |
+| 2026-09-27 | South | STORE | S05 | 532.4 |
+| 2026-09-27 | South | STORE | S06 | 2772.2 |
+| 2026-09-27 | South | ZONE TOTAL | NULL | 6414.9 |
+| 2026-09-27 | West | STORE | S13 | 2549.25 |
+| 2026-09-27 | West | STORE | S14 | 2034.45 |
+| 2026-09-27 | West | STORE | S15 | 3638.6 |
+| 2026-09-27 | West | ZONE TOTAL | NULL | 8222.3 |
+| 2026-09-28 | East | STORE | S08 | 1134.3 |
+| 2026-09-28 | East | STORE | S09 | 727.2 |
+| 2026-09-28 | East | STORE | S10 | 4400.0 |
+| 2026-09-28 | East | STORE | S11 | 352.0 |
+| 2026-09-28 | East | ZONE TOTAL | NULL | 6613.5 |
+| 2026-09-28 | North | STORE | S01 | 4294.9 |
+| 2026-09-28 | North | STORE | S02 | 1189.2 |
+| 2026-09-28 | North | STORE | S03 | 1541.65 |
+| 2026-09-28 | North | ZONE TOTAL | NULL | 7025.75 |
+| 2026-09-28 | South | STORE | S04 | 1302.0 |
+| 2026-09-28 | South | STORE | S05 | 575.6 |
+| 2026-09-28 | South | STORE | S06 | 1054.9 |
+| 2026-09-28 | South | ZONE TOTAL | NULL | 2932.5 |
+| 2026-09-28 | West | STORE | S13 | 1108.2 |
+| 2026-09-28 | West | STORE | S14 | 1768.6 |
+| 2026-09-28 | West | STORE | S15 | 1127.25 |
+| 2026-09-28 | West | ZONE TOTAL | NULL | 4004.05 |
+| 2026-09-29 | East | STORE | S08 | 288.15 |
+| 2026-09-29 | East | STORE | S09 | 4182.55 |
+| 2026-09-29 | East | STORE | S10 | 1136.0 |
+| 2026-09-29 | East | STORE | S11 | 2426.85 |
+| 2026-09-29 | East | ZONE TOTAL | NULL | 8033.55 |
+| 2026-09-29 | North | STORE | S01 | 3793.4 |
+| 2026-09-29 | North | STORE | S02 | 3520.9 |
+| 2026-09-29 | North | STORE | S03 | 3491.65 |
+| 2026-09-29 | North | ZONE TOTAL | NULL | 10805.95 |
+| 2026-09-29 | South | STORE | S04 | 6159.6 |
+| 2026-09-29 | South | STORE | S05 | 3652.75 |
+| 2026-09-29 | South | STORE | S06 | 992.0 |
+| 2026-09-29 | South | ZONE TOTAL | NULL | 10804.35 |
+| 2026-09-29 | West | STORE | S13 | 315.0 |
+| 2026-09-29 | West | STORE | S14 | 637.3 |
+| 2026-09-29 | West | STORE | S15 | 4746.45 |
+| 2026-09-29 | West | ZONE TOTAL | NULL | 5698.75 |
+| 2026-09-30 | East | STORE | S08 | 557.8 |
+| 2026-09-30 | East | STORE | S09 | 52.25 |
+| 2026-09-30 | East | STORE | S10 | 3073.7 |
+| 2026-09-30 | East | STORE | S11 | 4858.8 |
+| 2026-09-30 | East | ZONE TOTAL | NULL | 8542.55 |
+| 2026-09-30 | North | STORE | S01 | 1976.0 |
+| 2026-09-30 | North | STORE | S02 | 2206.4 |
+| 2026-09-30 | North | STORE | S03 | 214.0 |
+| 2026-09-30 | North | ZONE TOTAL | NULL | 4396.4 |
+| 2026-09-30 | South | STORE | S04 | 1673.1 |
+| 2026-09-30 | South | STORE | S05 | 3571.6 |
+| 2026-09-30 | South | STORE | S06 | 2493.5 |
+| 2026-09-30 | South | ZONE TOTAL | NULL | 7738.2 |
+| 2026-09-30 | West | STORE | S13 | 1301.6 |
+| 2026-09-30 | West | STORE | S14 | 582.45 |
+| 2026-09-30 | West | STORE | S15 | 357.0 |
+| 2026-09-30 | West | ZONE TOTAL | NULL | 2241.05 |
+
+## Q2 — Revenue and gross margin by category
+
+```sql
+SELECT category, round(sum(net_revenue),2) AS net_revenue,
+ round(sum(gross_margin),2) AS gross_margin
+FROM etl_fact_orders WHERE order_status='DELIVERED' AND order_date >= DATE '2026-09-01' AND order_date < DATE '2026-10-01'
+GROUP BY category ORDER BY category;
+```
+
+Result: 6 rows.
+
+| category | net_revenue | gross_margin |
+| --- | --- | --- |
+| Dairy & Bakery | 137230.6 | 36764.24 |
+| Fruits & Vegetables | 69484.2 | 16542.92 |
+| Household | 154063.7 | 38427.27 |
+| Personal Care | 166293.7 | 37716.43 |
+| Snacks & Beverages | 141028.15 | 32531.22 |
+| Staples | 196786.85 | 50745.39 |
+
+## Q3 — Delivery time and percentage within 15 minutes
+
+```sql
+SELECT store_id, count(*) AS delivered_orders,
+ round(avg(delivery_minutes),2) AS avg_delivery_minutes,
+ round(100.0*count(*) FILTER(WHERE within_15_min)/nullif(count(*),0),2) AS pct_within_15_min
+FROM etl_fact_orders WHERE order_status='DELIVERED' AND order_date >= DATE '2026-09-01' AND order_date < DATE '2026-10-01'
+GROUP BY store_id ORDER BY store_id;
+```
+
+Result: 13 rows.
+
+| store_id | delivered_orders | avg_delivery_minutes | pct_within_15_min |
+| --- | --- | --- | --- |
+| S01 | 125 | 20.7 | 30.4 |
+| S02 | 121 | 21.4 | 28.1 |
+| S03 | 120 | 21.23 | 28.33 |
+| S04 | 111 | 21.66 | 26.13 |
+| S05 | 118 | 21.31 | 30.51 |
+| S06 | 124 | 21.96 | 25.0 |
+| S08 | 131 | 20.54 | 35.88 |
+| S09 | 116 | 21.22 | 29.31 |
+| S10 | 123 | 21.82 | 27.64 |
+| S11 | 119 | 21.51 | 26.05 |
+| S13 | 120 | 21.75 | 28.33 |
+| S14 | 142 | 21.66 | 30.99 |
+| S15 | 131 | 22.47 | 20.61 |
+
+## Q4a — Revenue by payment mode
+
+```sql
+SELECT payment_mode,round(sum(net_revenue),2) AS net_revenue
+FROM etl_fact_orders WHERE order_status='DELIVERED' AND order_date >= DATE '2026-09-01' AND order_date < DATE '2026-10-01'
+GROUP BY payment_mode ORDER BY payment_mode;
+```
+
+Result: 4 rows.
+
+| payment_mode | net_revenue |
+| --- | --- |
+| Card | 176131.8 |
+| Cash on Delivery | 113901.0 |
+| UPI | 477139.85 |
+| Wallet | 97714.55 |
+
+## Q4b — Reconciliation amounts and unresolved exceptions
+
+```sql
+SELECT count(*) AS exception_rows,
+ count(*) FILTER(WHERE order_amount IS NOT NULL AND amount_paid IS NOT NULL) AS quantifiable_rows,
+ count(*) FILTER(WHERE order_amount IS NULL OR amount_paid IS NULL) AS unknown_amount_rows,
+ round(sum(abs(amount_paid-order_amount)),2) AS known_absolute_difference,
+ round(sum(amount_paid-order_amount),2) AS known_signed_difference
+FROM etl_payment_reconciliation;
+```
+
+Result: 1 rows.
+
+| exception_rows | quantifiable_rows | unknown_amount_rows | known_absolute_difference | known_signed_difference |
+| --- | --- | --- | --- | --- |
+| 574 | 70 | 504 | 37572.15 | -37572.15 |
+
+## Q5 — Top ten customers by delivered-order spend
+
+```sql
+SELECT customer_id,loyalty_tier,round(sum(net_revenue),2) AS total_spend
+FROM etl_fact_orders WHERE order_status='DELIVERED' AND order_date >= DATE '2026-09-01' AND order_date < DATE '2026-10-01'
+GROUP BY customer_id,loyalty_tier
+ORDER BY total_spend DESC,customer_id LIMIT 10;
+```
+
+Result: 10 rows.
+
+| customer_id | loyalty_tier | total_spend |
+| --- | --- | --- |
+| C00310 | BRONZE | 7258.95 |
+| C00072 | SILVER | 6393.95 |
+| C00265 | GOLD | 6119.5 |
+| C00236 | PLATINUM | 6105.8 |
+| C00115 | BRONZE | 5783.7 |
+| C00105 | GOLD | 5702.85 |
+| C00135 | BRONZE | 5693.2 |
+| C00163 | PLATINUM | 5671.5 |
+| C00064 | BRONZE | 5609.25 |
+| C00209 | PLATINUM | 5315.4 |
+
+## Q6 — Rejected rows by file and reason for the selected run
+
+```sql
+WITH rejected AS (
+SELECT 'orders.csv' AS source_file, failure_reason FROM read_csv('/Users/user/Documents/personal/iitfde/pipeline/IIT_Roorkie_CEC_Futurenece_Data_Pipeline_to_ML_Model/include/quarantine/vijayc5/orders_failed_f6f01b0cccd2e65abc61.csv', header=true, all_varchar=true)
+UNION ALL
+SELECT 'payments.csv' AS source_file, failure_reason FROM read_csv('/Users/user/Documents/personal/iitfde/pipeline/IIT_Roorkie_CEC_Futurenece_Data_Pipeline_to_ML_Model/include/quarantine/vijayc5/payments_failed_f6f01b0cccd2e65abc61.csv', header=true, all_varchar=true)
+UNION ALL
+SELECT 'customers.csv' AS source_file, failure_reason FROM read_csv('/Users/user/Documents/personal/iitfde/pipeline/IIT_Roorkie_CEC_Futurenece_Data_Pipeline_to_ML_Model/include/quarantine/vijayc5/customers_failed_f6f01b0cccd2e65abc61.csv', header=true, all_varchar=true)
+UNION ALL
+SELECT 'products.csv' AS source_file, failure_reason FROM read_csv('/Users/user/Documents/personal/iitfde/pipeline/IIT_Roorkie_CEC_Futurenece_Data_Pipeline_to_ML_Model/include/quarantine/vijayc5/products_failed_f6f01b0cccd2e65abc61.csv', header=true, all_varchar=true)
+UNION ALL
+SELECT 'stores.csv' AS source_file, failure_reason FROM read_csv('/Users/user/Documents/personal/iitfde/pipeline/IIT_Roorkie_CEC_Futurenece_Data_Pipeline_to_ML_Model/include/quarantine/vijayc5/stores_failed_f6f01b0cccd2e65abc61.csv', header=true, all_varchar=true)
+), result AS (
+ SELECT source_file,'FILE TOTAL (unique records)' AS reason,count(*) AS rejected_records
+ FROM rejected GROUP BY source_file
+ UNION ALL
+ SELECT source_file,trim(reason) AS reason,count(*) AS rejected_records
+ FROM rejected,unnest(string_split(failure_reason,';')) AS reasons(reason)
+ WHERE trim(reason)<>'' GROUP BY source_file,trim(reason)
+)
+SELECT 'scheduled__2026-10-29T03:30:00+00:00' AS run_id,* FROM result ORDER BY source_file,reason;
+```
+
+Result: 36 rows.
+
+| run_id | source_file | reason | rejected_records |
+| --- | --- | --- | --- |
+| scheduled__2026-10-29T03:30:00+00:00 | customers.csv | FILE TOTAL (unique records) | 13 |
+| scheduled__2026-10-29T03:30:00+00:00 | customers.csv | conflicting_key | 10 |
+| scheduled__2026-10-29T03:30:00+00:00 | customers.csv | signup_date:future | 3 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | FILE TOTAL (unique records) | 635 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | customer_id:invalid_reference | 65 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | customer_id:missing | 18 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | delivery:impossible | 6 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | delivery:missing | 8 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | discount:range | 3 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | exact_duplicate | 12 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | order_amount:formula | 18 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | order_amount:negative | 6 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | order_status:unknown | 3 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | order_ts:future | 5 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | order_ts:invalid_date | 5 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | order_ts:missing | 1 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | payment:unreconciled | 70 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | payment_mode:unknown | 3 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | product_id:invalid_reference | 170 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | quantity:nonpositive | 10 |
+| scheduled__2026-10-29T03:30:00+00:00 | orders.csv | store_id:invalid_reference | 316 |
+| scheduled__2026-10-29T03:30:00+00:00 | payments.csv | FILE TOTAL (unique records) | 26 |
+| scheduled__2026-10-29T03:30:00+00:00 | payments.csv | amount_paid:negative | 6 |
+| scheduled__2026-10-29T03:30:00+00:00 | payments.csv | exact_duplicate | 4 |
+| scheduled__2026-10-29T03:30:00+00:00 | payments.csv | order_id:orphan | 8 |
+| scheduled__2026-10-29T03:30:00+00:00 | payments.csv | payment_mode:unknown | 3 |
+| scheduled__2026-10-29T03:30:00+00:00 | payments.csv | payment_ts:future | 5 |
+| scheduled__2026-10-29T03:30:00+00:00 | products.csv | FILE TOTAL (unique records) | 12 |
+| scheduled__2026-10-29T03:30:00+00:00 | products.csv | category:missing | 3 |
+| scheduled__2026-10-29T03:30:00+00:00 | products.csv | conflicting_key | 4 |
+| scheduled__2026-10-29T03:30:00+00:00 | products.csv | cost:above_mrp | 5 |
+| scheduled__2026-10-29T03:30:00+00:00 | products.csv | mrp:nonpositive | 1 |
+| scheduled__2026-10-29T03:30:00+00:00 | stores.csv | FILE TOTAL (unique records) | 2 |
+| scheduled__2026-10-29T03:30:00+00:00 | stores.csv | capacity_orders_per_day:nonpositive | 1 |
+| scheduled__2026-10-29T03:30:00+00:00 | stores.csv | zone:missing | 1 |
+| scheduled__2026-10-29T03:30:00+00:00 | stores.csv | zone:unknown | 1 |
+
